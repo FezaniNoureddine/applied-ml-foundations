@@ -1,54 +1,58 @@
-# Machine Learning Model Evaluation Suite
+# Iris Neural Network Classification – Overfitting Control & Model Evaluation
 
-A comprehensive machine learning project covering **classification, regression, and clustering** models with structured performance evaluation using industry-standard metrics.
-
-This repository demonstrates practical implementation, comparison, and interpretation of supervised and unsupervised learning algorithms.
+This project implements a **Neural Network classifier using TensorFlow/Keras** on the **Iris dataset**.  
+The main focus is controlling **overfitting** and properly evaluating model performance.
 
 ---
 
 ## 📌 Project Overview
 
-This project focuses on:
-
-- 📊 **Classification**
-- 📈 **Regression**
-- 🔍 **Clustering**
-- 📏 Model performance evaluation using appropriate metrics
-- 📉 Error analysis and interpretation
-
-The goal is not only to build models, but to properly evaluate and understand their performance.
+- Dataset: Iris (4 input features, 3 output classes)
+- Framework: TensorFlow / Keras
+- Goal: Build a neural network classifier and reduce overfitting using proper techniques.
 
 ---
 
-## 🧠 Implemented Techniques
+## 🧠 Workflow
 
-### 🔹 Supervised Learning
-- Linear Regression
-- Classification models (e.g., Logistic Regression / other classifiers)
-
-### 🔹 Unsupervised Learning
-- K-Means Clustering
+### 1️⃣ Data Loading
+- Loaded Iris dataset using `sklearn.datasets`
+- 4 numerical input features
+- 3 target classes
 
 ---
 
-## 📊 Evaluation Metrics Used
+### 2️⃣ Preprocessing
+- Train / Validation / Test split
+- Feature scaling using `StandardScaler`
+- Prepared data for neural network training
 
-### ✅ Classification Metrics
-- Accuracy
-- Precision
-- Recall
+---
+
+### 3️⃣ Neural Network Architecture
+
+- Input layer (4 features)
+- Dense hidden layer (ReLU activation)
+- **L2 Regularization**
+- **Dropout (0.3)** to reduce overfitting
+- Output layer (3 neurons, multi-class classification)
+
+---
+
+### 4️⃣ Overfitting Prevention Techniques
+
+- ✅ L2 Regularization
+- ✅ Dropout Layer
+- ✅ Early Stopping (monitoring validation loss)
+- ✅ Feature Scaling
+- ✅ Validation Set Monitoring
+
+These techniques were applied because the model was initially overfitting.
+
+---
+
+## 📊 Evaluation Metrics
+
+- Accuracy (Test & Validation)
 - F1-Score
-- Confusion Matrix
-
-### ✅ Regression Metrics
-- Mean Absolute Error (MAE)
-- Mean Squared Error (MSE)
-- Root Mean Squared Error (RMSE)
-- R² Score
-
-### ✅ Clustering Metrics
-- Silhouette Score
-- Inertia (Elbow Method)
-- Adjusted Rand Index (if true labels available)
-
----
+- Comparison between validation and test performance
